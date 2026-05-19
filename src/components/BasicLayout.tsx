@@ -2,11 +2,11 @@ import { Outlet, useLocation, useNavigate } from "react-router";
 
 export default function BasicLayout() {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
   function togglePage() {
-    if (pathname === "/") navigate("/about");
-    else navigate("/");
+    if (pathname === "/") navigate(`/about${search}`);
+    else navigate(`/${search}`);
   }
 
   return (
