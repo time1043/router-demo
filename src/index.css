@@ -90,3 +90,133 @@ main button {
 main button:hover {
   background: #f8fafc;
 }
+
+/* List header */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-header a {
+  padding: 8px 14px;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.list-header a:hover {
+  background: #1d4ed8;
+}
+
+/* Search */
+.search input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Article list */
+.article-list {
+  list-style: none;
+}
+
+.article-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.article-list a {
+  text-decoration: none;
+  color: #0f172a;
+}
+
+.article-list a:hover h3 {
+  color: #2563eb;
+}
+
+.article-list .meta {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Article detail */
+article h2 {
+  margin: 16px 0 8px;
+}
+
+article .meta {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.actions a {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #2563eb;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.actions a:hover {
+  background: #1d4ed8;
+}
+
+/* Edit form */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.edit-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.edit-form button {
+  align-self: flex-start;
+}

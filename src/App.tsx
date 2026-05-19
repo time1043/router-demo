@@ -7,6 +7,7 @@ export default function App() {
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "active" : "")}
+          end
         >
           Home
         </NavLink>
@@ -15,6 +16,12 @@ export default function App() {
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           About
+        </NavLink>
+        <NavLink
+          to="/articles"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Articles
         </NavLink>
       </nav>
 
