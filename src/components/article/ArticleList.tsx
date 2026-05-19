@@ -1,7 +1,8 @@
-import { Link, useSearchParams } from "react-router";
-import { articles } from "../../libs/mock";
+import { Link, useLoaderData, useSearchParams } from "react-router";
+import type { Article } from "../../libs/types";
 
 export default function ArticleList() {
+  const articles = useLoaderData<Article[]>();
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Query params

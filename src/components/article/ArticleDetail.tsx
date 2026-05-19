@@ -1,14 +1,8 @@
-import { Link, useParams } from "react-router";
-import { articles } from "../../libs/mock";
+import { Link, useLoaderData } from "react-router";
+import type { Article } from "../../libs/types";
 
 export default function ArticleDetail() {
-  // Path param
-  const { id } = useParams();
-  const article = articles.find((a) => a.id === Number(id));
-
-  if (!article) {
-    return <div>Article not found</div>;
-  }
+  const article = useLoaderData<Article>();
 
   return (
     <div>
@@ -23,7 +17,7 @@ export default function ArticleDetail() {
       </article>
 
       <div className="actions">
-        <Link to={`/articles/${id}/edit`}>Edit</Link>
+        <Link to={`/articles/${article.id}/edit`}>Edit</Link>
         <button type="button">Delete</button>
       </div>
     </div>

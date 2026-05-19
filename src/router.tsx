@@ -6,6 +6,10 @@ import ArticleDetail from "./components/article/ArticleDetail";
 import ArticleEdit from "./components/article/ArticleEdit";
 import ArticleLayout from "./components/article/ArticleLayout";
 import ArticleList from "./components/article/ArticleList";
+import {
+  articleDetailLoader,
+  articleListLoader,
+} from "./components/article/loader";
 import Home from "./components/Home";
 
 export const router = createBrowserRouter([
@@ -19,10 +23,18 @@ export const router = createBrowserRouter([
         path: "articles",
         Component: ArticleLayout,
         children: [
-          { index: true, Component: ArticleList },
+          { index: true, Component: ArticleList, loader: articleListLoader },
           { path: "new", Component: ArticleCreate },
-          { path: ":id", Component: ArticleDetail },
-          { path: ":id/edit", Component: ArticleEdit },
+          {
+            path: ":id",
+            Component: ArticleDetail,
+            loader: articleDetailLoader,
+          },
+          {
+            path: ":id/edit",
+            Component: ArticleEdit,
+            loader: articleDetailLoader,
+          },
         ],
       },
     ],

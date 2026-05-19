@@ -1,18 +1,12 @@
-import { Link, useParams } from "react-router";
-import { articles } from "../../libs/mock";
+import { Link, useLoaderData } from "react-router";
+import type { Article } from "../../libs/types";
 
 export default function ArticleEdit() {
-  // Path param
-  const { id } = useParams();
-  const article = articles.find((a) => a.id === Number(id));
-
-  if (!article) {
-    return <div>Article not found</div>;
-  }
+  const article = useLoaderData<Article>();
 
   return (
     <div>
-      <Link to={`/articles/${id}`}>← Back to detail</Link>
+      <Link to={`/articles/${article.id}`}>← Back to detail</Link>
 
       <h2>Edit Article</h2>
 
