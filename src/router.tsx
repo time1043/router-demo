@@ -10,12 +10,15 @@ import {
   articleDetailLoader,
   articleListLoader,
 } from "./components/article/loader";
+import ErrorBoundary from "./components/ErrorBoundary";
 import Home from "./components/Home";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: App,
+    // errorElement: <ErrorBoundary />,
+    ErrorBoundary: ErrorBoundary,
     children: [
       { index: true, Component: Home },
       { path: "about", Component: About },
