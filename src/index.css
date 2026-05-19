@@ -27,13 +27,15 @@ nav {
   background: white;
 }
 
-nav button {
+nav button,
+nav a {
   padding: 8px 14px;
 
   border: none;
   border-radius: 8px;
 
   background: transparent;
+  text-decoration: none;
 
   font-size: 14px;
   font-weight: 500;
@@ -45,7 +47,8 @@ nav button {
     color 0.2s;
 }
 
-nav button:hover {
+nav button:hover,
+nav a:hover {
   background: #f1f5f9;
   color: #0f172a;
 }
