@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router";
+import { Form, Link, useLoaderData } from "react-router";
 import type { Article } from "../../libs/types";
 
 export default function ArticleEdit() {
@@ -10,17 +10,17 @@ export default function ArticleEdit() {
 
       <h2>Edit Article</h2>
 
-      <form className="edit-form">
+      <Form method="post" className="edit-form">
         <div>
           <label htmlFor="title">Title</label>
-          <input id="title" type="text" defaultValue={article.title} />
+          <input id="title" name="title" type="text" defaultValue={article.title} />
         </div>
         <div>
           <label htmlFor="content">Content</label>
-          <textarea id="content" rows={6} defaultValue={article.content} />
+          <textarea id="content" name="content" rows={6} defaultValue={article.content} />
         </div>
         <button type="submit">Save</button>
-      </form>
+      </Form>
     </div>
   );
 }

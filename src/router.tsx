@@ -1,6 +1,10 @@
 import { createBrowserRouter } from "react-router";
 import App from "./App";
 import About from "./components/About";
+import {
+  articleCreateAction,
+  articleEditAction,
+} from "./components/article/action";
 import ArticleCreate from "./components/article/ArticleCreate";
 import ArticleDetail from "./components/article/ArticleDetail";
 import ArticleEdit from "./components/article/ArticleEdit";
@@ -27,7 +31,11 @@ export const router = createBrowserRouter([
         Component: ArticleLayout,
         children: [
           { index: true, Component: ArticleList, loader: articleListLoader },
-          { path: "new", Component: ArticleCreate },
+          {
+            path: "new",
+            Component: ArticleCreate,
+            action: articleCreateAction,
+          },
           {
             path: ":id",
             Component: ArticleDetail,
@@ -37,6 +45,7 @@ export const router = createBrowserRouter([
             path: ":id/edit",
             Component: ArticleEdit,
             loader: articleDetailLoader,
+            action: articleEditAction,
           },
         ],
       },
