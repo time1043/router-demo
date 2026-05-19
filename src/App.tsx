@@ -1,11 +1,21 @@
-import { Link, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 
 export default function App() {
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          About
+        </NavLink>
       </nav>
 
       <main>
