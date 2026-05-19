@@ -234,6 +234,13 @@ article .meta {
   align-self: flex-start;
 }
 
+/* Field validation error */
+.field-error {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #dc2626;
+}
+
 /* Error boundary */
 .error-boundary {
   display: flex;

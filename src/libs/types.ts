@@ -12,3 +12,7 @@ export type PaginatedLoaderData<T> = {
   page: number;
   search: string;
 };
+
+export type ActionErrors = {
+  errors?: Record<string, string>;
+};
