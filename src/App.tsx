@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Activity, useState } from "react";
 import About from "./components/About";
 import Home from "./components/Home";
 
@@ -15,7 +15,14 @@ export default function App() {
         </button>
       </nav>
 
-      <main>{isHome ? <Home /> : <About />}</main>
+      <main>
+        <Activity mode={isHome ? "visible" : "hidden"}>
+          <Home />
+        </Activity>
+        <Activity mode={!isHome ? "visible" : "hidden"}>
+          <About />
+        </Activity>
+      </main>
     </>
   );
 }
