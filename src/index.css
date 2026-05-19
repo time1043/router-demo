@@ -72,6 +72,15 @@ main > div {
   gap: 20px;
 }
 
+/* Loading indicator */
+.loading {
+  padding: 12px 24px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 14px;
+  text-align: center;
+}
+
 /* Demo button */
 main button {
   width: fit-content;

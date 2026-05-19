@@ -1,6 +1,10 @@
-import { NavLink, Outlet } from "react-router";
+import { NavLink, Outlet, useNavigation } from "react-router";
+import Spinner from "./components/Spinner";
 
 export default function App() {
+  const navigation = useNavigation();
+  const isNavigating = Boolean(navigation.location);
+
   return (
     <>
       <nav>
@@ -24,6 +28,9 @@ export default function App() {
           Articles
         </NavLink>
       </nav>
+
+      {/* {navigation.state === "loading" && <Spinner />} */}
+      {isNavigating && <Spinner />}
 
       <main>
         <Outlet />
