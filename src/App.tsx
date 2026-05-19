@@ -5,17 +5,19 @@ import Home from "./components/Home";
 export default function App() {
   // Problem: After refresh on about page, back to home page
   // Need to save the information at the route
-  const [isHome, setIsHome] = useState(true);
+  const [page, setPage] = useState("home");
 
   return (
     <>
       <nav>
-        <button type="button" onClick={() => setIsHome((isHome) => !isHome)}>
-          Toggle
-        </button>
+        <button onClick={() => setPage("home")}>Home</button>
+        <button onClick={() => setPage("about")}>About</button>
       </nav>
 
-      <main>{isHome ? <Home /> : <About />}</main>
+      <main>
+        {page === "home" && <Home />}
+        {page === "about" && <About />}
+      </main>
     </>
   );
 }
