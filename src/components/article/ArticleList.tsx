@@ -1,25 +1,10 @@
 import { Link, useLoaderData, useSearchParams } from "react-router";
-import type { Article } from "../../libs/types";
+import type { Article, PaginatedLoaderData } from "../../libs/types";
 
 export default function ArticleList() {
-  const articles = useLoaderData<Article[]>();
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  // Query params
-  const search = searchParams.get("search") || "";
-  const page = Number(searchParams.get("page")) || 1;
-  const pageSize = 2;
-
-  // Filter articles
-  const filtered = articles.filter(
-    (article) =>
-      article.title.toLowerCase().includes(search.toLowerCase()) ||
-      article.author.toLowerCase().includes(search.toLowerCase())
-  );
-
-  // Pagination
-  const totalPages = Math.ceil(filtered.length / pageSize);
-  const paginated = filtered.slice((page - 1) * pageSize, page * pageSize);
+  const { articles, totalPages, page, search } =
+    useLoaderData<PaginatedLoaderData<Article>>();
+  const [, setSearchParams] = useSearchParams();
 
   return (
     <div>
@@ -42,7 +27,7 @@ export default function ArticleList() {
 
       {/* Article list - uses path param for detail */}
       <ul className="article-list">
-        {paginated.map((article) => (
+        {articles.map((article) => (
           <li key={article.id}>
             <Link to={`/articles/${article.id}`}>
               <h3>{article.title}</h3>
