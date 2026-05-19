@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body,
+#root {
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  gap: 8px;
+
+  padding: 14px 24px;
+  border-bottom: 1px solid #e2e8f0;
+
+  background: white;
+}
+
+nav button {
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+nav button:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Page */
+main {
+  padding: 48px 24px;
+}
+
+main > div {
+  max-width: 720px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Demo button */
+main button {
+  width: fit-content;
+
+  padding: 10px 16px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+
+  background: white;
+
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+main button:hover {
+  background: #f8fafc;
+}
