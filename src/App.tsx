@@ -1,4 +1,5 @@
-import { NavLink, Outlet, useNavigation } from "react-router";
+import { Outlet, useNavigation } from "react-router";
+import AppLink from "./components/AppLink";
 import Spinner from "./components/Spinner";
 
 export default function App() {
@@ -8,37 +9,11 @@ export default function App() {
   return (
     <>
       <nav>
-        <NavLink
-          to="/"
-          className={({ isActive, isPending }) =>
-            [isActive ? "active" : "", isPending ? "pending" : ""]
-              .filter(Boolean)
-              .join(" ")
-          }
-          end
-        >
+        <AppLink to="/" end>
           Home
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive, isPending }) =>
-            [isActive ? "active" : "", isPending ? "pending" : ""]
-              .filter(Boolean)
-              .join(" ")
-          }
-        >
-          About
-        </NavLink>
-        <NavLink
-          to="/articles"
-          className={({ isActive, isPending }) =>
-            [isActive ? "active" : "", isPending ? "pending" : ""]
-              .filter(Boolean)
-              .join(" ")
-          }
-        >
-          Articles
-        </NavLink>
+        </AppLink>
+        <AppLink to="/about">About</AppLink>
+        <AppLink to="/articles">Articles</AppLink>
       </nav>
 
       {/* {navigation.state === "loading" && <Spinner />} */}
