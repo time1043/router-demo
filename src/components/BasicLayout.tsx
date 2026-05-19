@@ -1,10 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router";
-
-export type ContextType = [
-  count: number,
-  setCount: Dispatch<SetStateAction<number>>,
-];
 
 export default function BasicLayout() {
   const navigate = useNavigate();
@@ -15,8 +9,6 @@ export default function BasicLayout() {
     else navigate("/");
   }
 
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <nav>
@@ -26,7 +18,7 @@ export default function BasicLayout() {
       </nav>
 
       <main>
-        <Outlet context={[count, setCount] satisfies ContextType} />
+        <Outlet />
       </main>
     </>
   );
