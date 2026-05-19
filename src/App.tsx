@@ -10,20 +10,32 @@ export default function App() {
       <nav>
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "active" : "")}
+          className={({ isActive, isPending }) =>
+            [isActive ? "active" : "", isPending ? "pending" : ""]
+              .filter(Boolean)
+              .join(" ")
+          }
           end
         >
           Home
         </NavLink>
         <NavLink
           to="/about"
-          className={({ isActive }) => (isActive ? "active" : "")}
+          className={({ isActive, isPending }) =>
+            [isActive ? "active" : "", isPending ? "pending" : ""]
+              .filter(Boolean)
+              .join(" ")
+          }
         >
           About
         </NavLink>
         <NavLink
           to="/articles"
-          className={({ isActive }) => (isActive ? "active" : "")}
+          className={({ isActive, isPending }) =>
+            [isActive ? "active" : "", isPending ? "pending" : ""]
+              .filter(Boolean)
+              .join(" ")
+          }
         >
           Articles
         </NavLink>
