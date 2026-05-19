@@ -1,13 +1,21 @@
+import { useState, type Dispatch, type SetStateAction } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router";
+
+export type ContextType = {
+  count: number;
+  setCount: Dispatch<SetStateAction<number>>;
+};
 
 export default function BasicLayout() {
   const navigate = useNavigate();
-  const { pathname, search } = useLocation();
+  const { pathname } = useLocation();
 
   function togglePage() {
-    if (pathname === "/") navigate(`/about${search}`);
-    else navigate(`/${search}`);
+    if (pathname === "/") navigate("/about");
+    else navigate("/");
   }
+
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -18,7 +26,7 @@ export default function BasicLayout() {
       </nav>
 
       <main>
-        <Outlet />
+        <Outlet context={{ count, setCount } satisfies ContextType} />
       </main>
     </>
   );
