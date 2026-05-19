@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useOutletContext } from "react-router";
+import type { ContextType } from "./BasicLayout";
 
 export default function Home() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useOutletContext<ContextType>();
 
   return (
     <div>
